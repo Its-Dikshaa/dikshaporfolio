@@ -175,7 +175,7 @@ function Index() {
 
             <div className="space-y-10">
               <div className="relative">
-                <p className="text-[10px] uppercase tracking-[0.22em] opacity-40 mb-2">2024 - Present</p>
+                <p className="text-[10px] uppercase tracking-[0.22em] opacity-40 mb-2">Sept 2024 - Present</p>
                 <h4 className="font-serif text-2xl">The MadBrains Technologies</h4>
                 <p className="text-sm opacity-60">UI/UX Designer · Abohar, India</p>
                 <p className="mt-4 text-base leading-relaxed font-light text-ink/80 max-w-md">

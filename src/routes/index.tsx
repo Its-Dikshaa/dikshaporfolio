@@ -23,7 +23,7 @@ const expertiseRight = [
   "Heuristic Eval.",
 ];
 
-const tools = ["Figma", "Framer", "Webflow", "Notion", "Spline", "Maze", "Hotjar", "FigJam", "Miro", "Relume"];
+const tools = ["Figma", "Framer", "Webflow", "Notion", "Stitch", "Maze", "Hotjar", "FigJam", "Miro", "Relume"];
 
 function Index() {
   return (
@@ -42,7 +42,7 @@ function Index() {
               Diksha<br />Jangra<span className="text-sepia">.</span>
             </h1>
             <p className="max-w-2xl text-xl md:text-2xl leading-relaxed font-light text-ink/80">
-              I design digital experiences where <span className="ink-underline text-ink">empathy meets precision</span>, crafting human-centric products across fintech, agritech, and healthcare for the past 1.5+ years at The MadBrains Technologies.
+              I design digital experiences where <span className="ink-underline text-ink">empathy meets precision</span>, crafting human-centric products across fintech, agritech, and healthcare for the past 2+ years.
             </p>
 
             <div className="mt-12 flex flex-wrap items-center gap-6">
@@ -189,7 +189,7 @@ function Index() {
               </div>
 
               <div className="border-t hairline pt-8">
-                <p className="text-[10px] uppercase tracking-[0.22em] opacity-40 mb-2">Jan 2024</p>
+                <p className="text-[10px] uppercase tracking-[0.22em] opacity-40 mb-2">Jan 2024 - Sept 2024</p>
                 <h4 className="font-serif text-2xl">Freelance</h4>
                 <p className="text-sm opacity-60">UI/UX Designer · Remote</p>
                 <p className="mt-4 text-base leading-relaxed font-light text-ink/80 max-w-md">

@@ -101,7 +101,7 @@ function Index() {
         <section id="work" className="mb-32 lg:mb-48">
           <div className="flex items-baseline justify-between mb-10 border-b hairline pb-5">
             <h2 className="font-serif text-3xl md:text-5xl italic">Selected Case Studies</h2>
-            <span className="font-hand text-xl text-sepia hidden md:block">eight stories of growth</span>
+            <span className="font-hand text-xl text-sepia hidden md:block">seven stories of growth</span>
           </div>
 
           <div className="space-y-1">

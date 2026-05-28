@@ -73,7 +73,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Diksha Jangra | UI/UX Designer · Portfolio 2025" },
-      { name: "description", content: "Diksha Jangra is a UI/UX designer crafting empathetic digital products across fintech, agritech, health, and real estate. Eight case studies, one point of view." },
+      { name: "description", content: "Diksha Jangra is a UI/UX designer crafting empathetic digital products across fintech, agritech, health, and real estate. Seven case studies, one point of view." },
       { name: "author", content: "Diksha Jangra" },
       { property: "og:title", content: "Diksha Jangra | UI/UX Designer" },
       { property: "og:description", content: "Where empathy meets precision. Portfolio of UI/UX designer Diksha Jangra." },

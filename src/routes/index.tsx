@@ -42,7 +42,7 @@ function Index() {
               Diksha<br />Jangra<span className="text-sepia">.</span>
             </h1>
             <p className="max-w-2xl text-xl md:text-2xl leading-relaxed font-light text-ink/80">
-              I design digital experiences where <span className="ink-underline text-ink">empathy meets precision</span>, crafting human-centric products across fintech, agritech, and healthcare for the past 1+ year at The MadBrains Technologies.
+              I design digital experiences where <span className="ink-underline text-ink">empathy meets precision</span>, crafting human-centric products across fintech, agritech, and healthcare for the past 1.5+ years at The MadBrains Technologies.
             </p>
 
             <div className="mt-12 flex flex-wrap items-center gap-6">
@@ -215,7 +215,7 @@ function Index() {
         {/* SMALL STATS RIBBON */}
         <section className="mb-32 lg:mb-40 grid grid-cols-2 md:grid-cols-4 gap-6 border-y hairline py-10">
           <Stat n="8" label="Projects designed" />
-          <Stat n="1+ yr" label="Industry experience" />
+          <Stat n="2+ yr" label="Industry experience" />
           <Stat n="3" label="Case studies published" />
           <Stat n="∞" label="Curiosity & drive" />
         </section>

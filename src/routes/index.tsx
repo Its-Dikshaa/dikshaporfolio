@@ -214,7 +214,7 @@ function Index() {
 
         {/* SMALL STATS RIBBON */}
         <section className="mb-32 lg:mb-40 grid grid-cols-2 md:grid-cols-4 gap-6 border-y hairline py-10">
-          <Stat n="8" label="Projects designed" />
+          <Stat n="7" label="Projects designed" />
           <Stat n="2+ yr" label="Industry experience" />
           <Stat n="3" label="Case studies published" />
           <Stat n="∞" label="Curiosity & drive" />

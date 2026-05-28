@@ -437,65 +437,8 @@ export const caseStudies: CaseStudy[] = [
       "Designing community products taught me that the design isn't the screen; it's the group dynamic the screen quietly shapes.",
   },
   {
-    slug: "investar-io",
-    index: "07",
-    title: "Investar IO",
-    subtitle: "Fractional real-estate investing, demystified for first-time investors.",
-    domain: "PropTech · Investing",
-    platform: "Web Platform",
-    tags: ["PropTech", "Investment", "Fractional"],
-    nda: true,
-    year: "2024",
-    role: "UI/UX Designer",
-    duration: "12 weeks",
-    team: "Confidential",
-    oneLiner: "A platform that turns 'I don't understand real estate' into 'I own a piece of one'.",
-    hero: {
-      eyebrow: "Case Study 07 · PropTech · Under NDA",
-      headline: "Investing is intimidating. The interface shouldn't be.",
-      summary:
-        "Investar IO lets retail investors buy fractional stakes in commercial real estate. The design challenge was making a complex, regulated, slow-moving asset class feel approachable without crossing into oversimplification.",
-      accent: "#C9A84C",
-    },
-    context:
-      "Indian retail investors have moved from FDs to mutual funds in the last decade. Real estate is the next frontier, but the language, paperwork, and unit economics are foreign. Most platforms either over-explain or under-explain.",
-    problem:
-      "How do you design a financial onboarding that respects regulatory disclosures and still feels like progress, not paperwork?",
-    goals: [
-      "Make every disclosure feel like a feature, not a wall.",
-      "Visualise expected returns honestly, without hype.",
-      "Reduce KYC drop-off through staged completion.",
-    ],
-    research: [
-      {
-        method: "Investor interviews · 9 retail investors",
-        insight:
-          "Investors didn't want simpler; they wanted ordered. They were willing to read, but not to hunt.",
-      },
-    ],
-    personas: [
-      { name: "Confidential", role: "First-time real-estate investor", need: "Understand what they own and what they earn.", pain: "Glossy marketing that hides the fees." },
-    ],
-    decisions: [
-      {
-        title: "Honest return ribbons",
-        body: "Every projected return is shown with a range, a source, and a 'what could go wrong' link inline. Higher initial friction, dramatically higher trust score in usability testing.",
-      },
-      {
-        title: "Staged KYC",
-        body: "Broke KYC into 4 micro-stages with savable progress. Completion lift of 38% in pilot vs. single-flow KYC.",
-      },
-    ],
-    outcomes: [
-      { metric: "+38%", label: "KYC completion" },
-      { metric: "+26%", label: "First-investment conversion" },
-    ],
-    reflection:
-      "In regulated products, design integrity is a moat. The temptation to round numbers and hide footnotes is constant, and resisting it is what makes the product survive its first audit and its first downturn.",
-  },
-  {
     slug: "b2b-marketplace",
-    index: "08",
+    index: "07",
     title: "B2B Marketplace",
     subtitle: "A procurement platform built for the buyer who has done this 400 times before.",
     domain: "B2B · Procurement",

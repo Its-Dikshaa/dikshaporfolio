@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { caseStudies, getCaseStudy, type CaseStudy } from "@/lib/case-studies";
 import { SiteNav, SiteFooter } from "@/components/site-chrome";
+import { PhoneFrame, ClosingGridShowcase, ImageWithFallback } from "@/components/screen-mockup";
 
 export const Route = createFileRoute("/case-study/$slug")({
   component: CaseStudyPage,
@@ -26,7 +27,7 @@ function CaseStudyPage() {
         </Link>
 
         {/* HERO */}
-        <header className="mt-12 grid grid-cols-12 gap-8 mb-24 drift">
+        <header className="mt-12 grid grid-cols-12 gap-8 mb-16 drift">
           <div className="col-span-12 lg:col-span-9">
             <p className="font-hand text-2xl text-sepia mb-4">
               Case Study · {cs.index}
@@ -47,18 +48,80 @@ function CaseStudyPage() {
             <div className="border-l hairline pl-6 space-y-5 text-sm">
               <Meta label="Role" value={cs.role} />
               <Meta label="Duration" value={cs.duration} />
-              <Meta label="Team" value={cs.team} />
               <Meta label="Year" value={cs.year} />
               <Meta label="Platform" value={cs.platform} />
             </div>
           </aside>
         </header>
 
+        {/* HERO SCREEN SHOWCASE */}
+        {(cs.heroImage || (cs.heroScreens && cs.heroScreens.length > 0)) && (
+          <div className="mb-20 p-6 md:p-8 border hairline rounded-2xl bg-card/40 text-ink shadow-sm overflow-hidden">
+            <div className="text-center mb-6">
+              <span className="text-[10px] uppercase tracking-[0.22em] text-sepia font-medium">
+                KEY VISUAL SURFACES
+              </span>
+            </div>
+            {cs.heroImage ? (
+              <div className="w-full flex justify-center items-center py-2">
+                <ImageWithFallback
+                  src={cs.heroImage}
+                  alt={`${cs.title} Key Visual Surfaces`}
+                  className="max-h-[520px] w-auto max-w-full object-contain mx-auto drop-shadow-xl"
+                  fallback={
+                    <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
+                      {cs.heroScreens?.map((s, i) => (
+                        <PhoneFrame
+                          key={i}
+                          label={s.label}
+                          title={s.title}
+                          subtitle={s.subtitle}
+                          variant={s.variant}
+                          image={s.image}
+                          accentColor={cs.hero.accent}
+                        />
+                      ))}
+                    </div>
+                  }
+                />
+              </div>
+            ) : (
+              <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10 py-2">
+                {cs.heroScreens?.map((s, i) => (
+                  <PhoneFrame
+                    key={i}
+                    label={s.label}
+                    title={s.title}
+                    subtitle={s.subtitle}
+                    variant={s.variant}
+                    image={s.image}
+                    accentColor={cs.hero.accent}
+                  />
+                ))}
+              </div>
+            )}
+
+            {/* BOTTOM RIBBON BAR */}
+            <div className="mt-6 pt-4 border-t hairline flex flex-col sm:flex-row items-center justify-between gap-3">
+              <span className="font-hand text-lg md:text-xl text-sepia flex items-center gap-1.5">
+                the cover, where it all begins ✦
+              </span>
+              <a
+                href={cs.dribbbleUrl || "https://dribbble.com/Diksha_Jangra"}
+                target="_blank"
+                rel="noreferrer"
+                className="text-[10px] uppercase tracking-[0.2em] font-medium text-ink/65 hover:text-sepia transition-colors inline-flex items-center gap-1"
+              >
+                CHECK THE CASE STUDY ON DRIBBBLE →
+              </a>
+            </div>
+          </div>
+        )}
+
         {/* META on mobile */}
         <section className="lg:hidden grid grid-cols-2 gap-6 mb-16 border-y hairline py-6 text-sm">
           <Meta label="Role" value={cs.role} />
           <Meta label="Duration" value={cs.duration} />
-          <Meta label="Team" value={cs.team} />
           <Meta label="Year" value={cs.year} />
         </section>
 
@@ -148,32 +211,98 @@ function CaseStudyPage() {
 
         {/* DECISIONS */}
         <Chapter num={cs.ia ? "06" : "05"} title="Key decisions" hand="the forks in the road">
-          <div className="space-y-px max-w-4xl bg-border/40 border hairline rounded-lg overflow-hidden">
+          <div className="space-y-6 max-w-4xl">
             {cs.decisions.map((d, i) => (
-              <article key={i} className="bg-card p-7 md:p-8 hover:bg-secondary/60 transition-colors">
-                <div className="flex items-baseline gap-6">
-                  <span className="font-serif italic text-2xl text-sepia w-10 shrink-0">{String(i + 1).padStart(2, "0")}</span>
-                  <div className="flex-1">
-                    <h3 className="font-serif text-2xl md:text-3xl text-ink mb-3">{d.title}</h3>
-                    <p className="text-ink/75 leading-relaxed text-base md:text-lg font-light max-w-3xl">{d.body}</p>
+              <article key={i} className="bg-card p-6 md:p-8 border hairline rounded-xl hover:bg-secondary/40 transition-colors">
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <span className="font-serif italic text-2xl text-sepia">{String(i + 1).padStart(2, "0")}</span>
+                    <h3 className="font-serif text-2xl md:text-3xl text-ink">{d.title}</h3>
                   </div>
+                  <p className="text-ink/75 leading-relaxed text-base md:text-lg font-light">{d.body}</p>
                 </div>
               </article>
             ))}
           </div>
         </Chapter>
 
-        {/* OUTCOMES */}
-        <Chapter num={cs.ia ? "07" : "06"} title="What changed" hand="the numbers that matter">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl">
-            {cs.outcomes.map((o, i) => (
-              <div key={i} className="border hairline rounded-lg p-7 bg-card">
-                <div className="font-serif text-5xl md:text-6xl italic text-ink leading-none">{o.metric}</div>
-                <div className="mt-4 text-sm text-ink/65 leading-relaxed">{o.label}</div>
-              </div>
-            ))}
+        {/* OUTCOMES / THE FINAL FLOW */}
+        <Chapter
+          num={cs.ia ? "07" : "06"}
+          title={cs.outcomeTitle || "What changed"}
+          hand={cs.showClosingGrid ? "letting the screens talk" : "the numbers that matter"}
+        >
+          <div className="space-y-6 max-w-4xl">
+            {cs.showClosingGrid ? (
+              <>
+                <ClosingGridShowcase images={cs.closingGridImages} />
+                {cs.outcomeDescription && (
+                  <p className="text-base md:text-lg leading-relaxed text-ink/85 font-light bg-card p-6 border hairline rounded-xl mt-4">
+                    {cs.outcomeDescription}
+                  </p>
+                )}
+              </>
+            ) : (
+              <>
+                {cs.outcomeDescription && (
+                  <p className="text-lg leading-relaxed text-ink/85 font-light bg-card p-6 border hairline rounded-xl">
+                    {cs.outcomeDescription}
+                  </p>
+                )}
+                {cs.outcomes && cs.outcomes.length > 0 && (
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {cs.outcomes.map((o, i) => (
+                      <div key={i} className="border hairline rounded-lg p-7 bg-card">
+                        <div className="font-serif text-5xl md:text-6xl italic text-ink leading-none">{o.metric}</div>
+                        <div className="mt-4 text-sm text-ink/65 leading-relaxed">{o.label}</div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </>
+            )}
           </div>
         </Chapter>
+
+        {/* THE SCREENS (System to Shipped Showcase) */}
+        <section className="mt-20 mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div className="lg:col-span-4 space-y-4">
+              <div className="flex items-center gap-2">
+                <span className="text-sepia text-lg">✦</span>
+              </div>
+              <h2 className="font-serif text-4xl md:text-5xl italic text-ink leading-tight">
+                The screens
+              </h2>
+              <p className="font-hand text-xl md:text-2xl text-sepia">
+                - from system to shipped
+              </p>
+              <p className="text-base text-ink/75 font-light leading-relaxed pt-2 max-w-md">
+                Pulled straight from the published case study: the visual system, the wireframes, and the application screens as they finally landed.
+              </p>
+            </div>
+
+            <div className="lg:col-span-8 space-y-3">
+              <div className="aspect-[4/3] w-full border hairline rounded-2xl overflow-hidden bg-card/80 shadow-xl p-2 md:p-3">
+                <ImageWithFallback
+                  src={cs.screensImage || cs.heroImage || ""}
+                  alt={`${cs.title} Full Screens Showcase`}
+                  className="w-full h-full object-cover rounded-xl"
+                  fallback={
+                    <div className="w-full h-full bg-[#17171A] rounded-xl flex items-center justify-center text-sepia/70 font-hand text-xl p-8 text-center border hairline">
+                      ✦ {cs.title} Screens Grid Collage ✦
+                    </div>
+                  }
+                />
+              </div>
+              {cs.screensCaption && (
+                <p className="font-hand text-lg text-sepia text-right pr-2">
+                  {cs.screensCaption}
+                </p>
+              )}
+            </div>
+          </div>
+        </section>
 
         {/* REFLECTION */}
         <Chapter num={cs.ia ? "08" : "07"} title="A reflection" hand="what I'd carry forward">
@@ -182,6 +311,39 @@ function CaseStudyPage() {
           </p>
           <p className="mt-6 font-hand text-xl text-sepia">Diksha</p>
         </Chapter>
+
+        {/* DRIBBBLE / BEHANCE CALLOUT BANNER */}
+        <section className="mt-20 border-t hairline pt-16">
+          <div className="border hairline rounded-2xl bg-card/60 p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-sm">
+            <div className="space-y-2 max-w-xl">
+              <p className="font-hand text-2xl text-sepia">the original, in full</p>
+              <h3 className="font-serif text-3xl md:text-4xl italic text-ink leading-tight">
+                Check the case study on Dribbble
+              </h3>
+              <p className="text-sm md:text-base text-ink/75 font-light leading-relaxed pt-1">
+                Every frame, annotation and flow of {cs.title} — published on my Dribbble, and more work on Behance.
+              </p>
+            </div>
+            <div className="flex flex-wrap items-center gap-3 shrink-0 w-full md:w-auto pt-2 md:pt-0">
+              <a
+                href={cs.dribbbleUrl || "https://dribbble.com/Diksha_Jangra"}
+                target="_blank"
+                rel="noreferrer"
+                className="px-6 py-3.5 rounded-lg bg-ink text-cream text-xs uppercase tracking-[0.2em] font-medium hover:bg-sepia transition-colors inline-flex items-center gap-2"
+              >
+                Dribbble →
+              </a>
+              <a
+                href={cs.behanceUrl || "https://www.behance.net/dikshajangra8"}
+                target="_blank"
+                rel="noreferrer"
+                className="px-6 py-3.5 rounded-lg border hairline bg-card hover:bg-secondary text-ink text-xs uppercase tracking-[0.2em] font-medium transition-colors inline-flex items-center gap-2"
+              >
+                Behance →
+              </a>
+            </div>
+          </div>
+        </section>
 
         {/* NEXT */}
         <section className="mt-24 border-t hairline pt-12">

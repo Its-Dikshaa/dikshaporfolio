@@ -12,6 +12,12 @@ export type CaseStudy = {
   duration: string;
   team: string;
   oneLiner: string;
+  thumbnailImage?: string;
+  heroImage?: string;
+  screensImage?: string;
+  screensCaption?: string;
+  dribbbleUrl?: string;
+  behanceUrl?: string;
   // Detail
   hero: {
     eyebrow: string;
@@ -19,6 +25,7 @@ export type CaseStudy = {
     summary: string;
     accent: string; // hex
   };
+  heroScreens?: { image?: string; label: string; title: string; subtitle?: string; variant: "home" | "breathe" | "write" | "generic" }[];
   context: string;
   problem: string;
   goals: string[];
@@ -28,7 +35,11 @@ export type CaseStudy = {
   }[];
   personas: { name: string; role: string; need: string; pain: string }[];
   ia?: string;
-  decisions: { title: string; body: string }[];
+  decisions: { title: string; body: string; image?: string; screenVariant?: "home" | "breathe" | "write" | "generic" }[];
+  outcomeTitle?: string;
+  outcomeDescription?: string;
+  showClosingGrid?: boolean;
+  closingGridImages?: string[];
   outcomes: { metric: string; label: string }[];
   reflection: string;
 };
@@ -47,6 +58,10 @@ export const caseStudies: CaseStudy[] = [
     duration: "10 weeks · discovery → handoff",
     team: "1 PM · 2 engineers · 1 clinical advisor",
     oneLiner: "An app that turns a moment of overwhelm into the smallest possible next step.",
+    thumbnailImage: "/images/work/ease-well-hero-full.png",
+    heroImage: "/images/work/ease-well-hero-full.png",
+    screensImage: "/images/work/ease-well-screens-full.jpg",
+    screensCaption: "- every calm moment in one place",
     hero: {
       eyebrow: "Case Study 01 · HealthTech",
       headline: "A quiet companion for the loudest moments.",
@@ -54,6 +69,11 @@ export const caseStudies: CaseStudy[] = [
         "Ease Well helps people in early distress find their footing, without forcing them to name what's wrong before they're ready. The product had to feel less like an app and more like a friend who already knows.",
       accent: "#C9A84C",
     },
+    heroScreens: [
+      { label: "Home", title: "Calm-first home screen", subtitle: "Single tap entry", variant: "home", image: "/images/work/ease-well-hero-1.jpg" },
+      { label: "Breathe", title: "Breathing exercise", subtitle: "4-7-8 haptics", variant: "breathe", image: "/images/work/ease-well-hero-2.jpg" },
+      { label: "Write", title: "Journal / write screen", subtitle: "Zero clinical labels", variant: "write", image: "/images/work/ease-well-hero-3.jpg" },
+    ],
     context:
       "Mental-health apps in India are crowded with assessments, streaks, and gamified meditations. For users in acute moments, those patterns feel like homework. We were asked to design a tool that an anxious 22-year-old at 2 a.m. would actually open, and finish using calmer than when they started.",
     problem:
@@ -99,25 +119,38 @@ export const caseStudies: CaseStudy[] = [
       {
         title: "Calm-first home, not stats-first",
         body: "The first surface is a single warm gradient with one tap: 'I want to feel a little better'. Everything else is one swipe away. No streaks, no scores, no notifications by default.",
+        screenVariant: "home",
+        image: "/images/work/ease-well-decision-1.jpg",
       },
       {
         title: "Earned identity",
         body: "Account creation is deferred until the user wants something only an account can do (save a journal, sync to therapist). Until then, the app works fully anonymously.",
+        screenVariant: "generic",
+        image: "/images/work/ease-well-decision-2.jpg",
       },
       {
         title: "Soft motion as therapy",
         body: "Breathing exercises use a 4-7-8 timed expansion synced to subtle haptics. We prototyped 14 easing curves before landing on one that mirrors a slow exhale.",
+        screenVariant: "breathe",
+        image: "/images/work/ease-well-decision-3.jpg",
       },
       {
         title: "Language without judgement",
         body: "Removed clinical labels. 'Anxiety toolkit' became 'When everything feels too much'. Copywriting was reviewed by a practising counsellor.",
+        screenVariant: "write",
+        image: "/images/work/ease-well-decision-4.jpg",
       },
     ],
-    outcomes: [
-      { metric: "−68%", label: "Time to first calming interaction" },
-      { metric: "4.7★", label: "Average rating · closed beta · n=84" },
-      { metric: "3.2×", label: "Day-7 retention vs. category benchmark" },
+    outcomeTitle: "The final flow",
+    outcomeDescription: "Cut the path to the first calming interaction from a multi-screen assessment to a single tap. The calm-first flow was validated with our clinical advisor before handoff.",
+    showClosingGrid: true,
+    closingGridImages: [
+      "/images/work/ease-well-flow-1.jpg",
+      "/images/work/ease-well-flow-2.jpg",
+      "/images/work/ease-well-flow-3.jpg",
+      "/images/work/ease-well-flow-4.jpg",
     ],
+    outcomes: [],
     reflection:
       "The hardest design decision was removing things. Every removed metric, badge, and streak made the product more honest. I learned to defend whitespace as a feature, not as a missing opportunity.",
   },
@@ -134,6 +167,10 @@ export const caseStudies: CaseStudy[] = [
     duration: "14 weeks · 0→1",
     team: "1 founder · 3 engineers",
     oneLiner: "Turned a 600-message WhatsApp morning into a five-minute morning.",
+    thumbnailImage: "/images/work/brokerpad-hero-full.png",
+    heroImage: "/images/work/brokerpad-hero-full.png",
+    screensImage: "/images/work/brokerpad-screens-full.jpg",
+    screensCaption: "- every follow-up in one place",
     hero: {
       eyebrow: "Case Study 02 · PropTech",
       headline: "Brokers don't need another CRM. They need their morning back.",
@@ -206,6 +243,10 @@ export const caseStudies: CaseStudy[] = [
     duration: "9 weeks · concept → MVP",
     team: "1 PM · 1 vet advisor · 2 engineers",
     oneLiner: "A pet-care app that recognises that the user is the human, but the customer is the dog.",
+    thumbnailImage: "/images/work/pawpulse-hero-full.png",
+    heroImage: "/images/work/pawpulse-hero-full.png",
+    screensImage: "/images/work/pawpulse-screens-full.jpg",
+    screensCaption: "- every care memory in one place",
     hero: {
       eyebrow: "Case Study 03 · PetTech",
       headline: "Built for the human who carries the leash.",

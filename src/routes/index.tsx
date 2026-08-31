@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { caseStudies } from "@/lib/case-studies";
 import { SiteNav, SiteFooter, ScribbleArrow } from "@/components/site-chrome";
+import { ProjectThumbnail } from "@/components/screen-mockup";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -97,50 +98,50 @@ function Index() {
           </div>
         </section>
 
-        {/* CASE STUDIES */}
+        {/* CASE STUDIES GRID WITH THUMBNAILS */}
         <section id="work" className="mb-32 lg:mb-48">
           <div className="flex items-baseline justify-between mb-10 border-b hairline pb-5">
             <h2 className="font-serif text-3xl md:text-5xl italic">Selected Case Studies</h2>
             <span className="font-hand text-xl text-sepia hidden md:block">seven stories of growth</span>
           </div>
 
-          <div className="space-y-1">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {caseStudies.map((c) => (
               <Link
                 key={c.slug}
                 to="/case-study/$slug"
                 params={{ slug: c.slug }}
-                className="group block border-b hairline py-6 md:py-8 transition-all hover:px-4 hover:bg-card/70"
+                className="group block border hairline rounded-xl bg-card/80 overflow-hidden hover:border-sepia/50 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
               >
-                <div className="grid grid-cols-12 gap-4 items-center">
-                  <span className="col-span-2 md:col-span-1 text-xs opacity-40 font-medium font-serif">{c.index}</span>
-                  <div className="col-span-10 md:col-span-5">
-                    <h3 className="font-serif text-2xl md:text-4xl font-semibold group-hover:italic transition-all flex flex-wrap items-center gap-3">
-                      {c.title}
-                      {c.nda && (
-                        <span className="text-[9px] font-sans font-medium uppercase tracking-[0.2em] px-2 py-1 bg-ink text-cream rounded">
-                          NDA
-                        </span>
-                      )}
-                    </h3>
-                  </div>
-                  <div className="hidden md:block md:col-span-4">
-                    <p className="text-sm opacity-60 leading-relaxed">{c.subtitle}</p>
-                  </div>
-                  <div className="col-span-12 md:col-span-2 flex justify-start md:justify-end gap-2 flex-wrap">
-                    {c.tags.slice(0, 1).map((t) => (
-                      <span key={t} className="px-3 py-0.5 rounded-full border hairline text-[10px] uppercase tracking-[0.15em] text-ink/70">
-                        {t}
+                <ProjectThumbnail slug={c.slug} title={c.title} thumbnailImage={c.heroImage || c.thumbnailImage} />
+                <div className="p-6 md:p-7 space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-serif italic text-sepia font-medium">
+                      {c.index} · {c.domain}
+                    </span>
+                    {c.nda && (
+                      <span className="text-[9px] font-sans font-medium uppercase tracking-[0.2em] px-2 py-0.5 bg-ink text-cream rounded">
+                        NDA
                       </span>
-                    ))}
+                    )}
+                  </div>
+                  <h3 className="font-serif text-2xl md:text-3xl font-semibold text-ink group-hover:text-sepia transition-colors">
+                    {c.title}
+                  </h3>
+                  <p className="text-sm text-ink/75 leading-relaxed font-light">
+                    {c.subtitle}
+                  </p>
+                  <div className="pt-2 flex items-center justify-between text-xs text-sepia">
+                    <span className="uppercase tracking-widest text-[10px] font-medium">{c.tags[0]}</span>
+                    <span className="group-hover:translate-x-1 transition-transform">Read case study →</span>
                   </div>
                 </div>
               </Link>
             ))}
           </div>
 
-          <p className="mt-10 font-hand text-xl text-sepia text-center">
-            (psst, click any title for the full story)
+          <p className="mt-12 font-hand text-xl text-sepia text-center">
+            (psst, click any card for the full story)
           </p>
         </section>
 
@@ -216,7 +217,7 @@ function Index() {
         <section className="mb-32 lg:mb-40 grid grid-cols-2 md:grid-cols-4 gap-6 border-y hairline py-10">
           <Stat n="7" label="Projects designed" />
           <Stat n="2+ yr" label="Industry experience" />
-          <Stat n="3" label="Case studies published" />
+          <Stat n="7" label="Case studies" />
           <Stat n="∞" label="Curiosity & drive" />
         </section>
 

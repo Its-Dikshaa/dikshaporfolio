@@ -31,18 +31,18 @@ function Index() {
     <div className="paper relative min-h-screen bg-background text-foreground">
       <SiteNav />
 
-      <main className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-28 sm:pt-36 lg:pt-44 pb-16 overflow-x-hidden">
+      <main className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-24 sm:pt-36 lg:pt-44 pb-16 w-full">
         {/* HERO */}
-        <header className="relative grid grid-cols-12 gap-6 sm:gap-8 mb-24 sm:mb-32 lg:mb-48 drift">
-          <div className="col-span-12 lg:col-span-9">
+        <header className="relative flex flex-col lg:grid lg:grid-cols-12 gap-6 sm:gap-8 mb-20 sm:mb-32 lg:mb-48 drift w-full">
+          <div className="w-full lg:col-span-9">
             <p className="font-hand text-xl sm:text-2xl text-sepia mb-3 sm:mb-4 relative inline-block">
               Based in Abohar, India
               <ScribbleArrow className="hidden sm:block absolute -right-12 top-1 w-9 h-9 text-sepia/40" />
             </p>
-            <h1 className="font-serif text-6xl sm:text-8xl md:text-[10rem] lg:text-[12rem] leading-[0.88] sm:leading-[0.84] italic tracking-tighter mb-6 sm:mb-10 text-ink">
+            <h1 className="font-serif text-5xl xs:text-6xl sm:text-8xl md:text-[10rem] lg:text-[12rem] leading-[0.88] sm:leading-[0.84] italic tracking-tighter mb-6 sm:mb-10 text-ink">
               Diksha<br />Jangra<span className="text-sepia">.</span>
             </h1>
-            <p className="max-w-2xl text-lg sm:text-xl md:text-2xl leading-relaxed font-light text-ink/80">
+            <p className="max-w-2xl text-base sm:text-xl md:text-2xl leading-relaxed font-light text-ink/80">
               I design digital experiences where <span className="ink-underline text-ink">empathy meets precision</span>, crafting human-centric products across fintech, agritech, and healthcare for the past 2+ years.
             </p>
 
@@ -80,19 +80,19 @@ function Index() {
         </header>
 
         {/* ABOUT */}
-        <section id="about" className="mb-32 lg:mb-48 grid grid-cols-12 gap-8">
-          <div className="col-span-12 lg:col-span-3">
+        <section id="about" className="mb-20 sm:mb-32 lg:mb-48 flex flex-col lg:grid lg:grid-cols-12 gap-6 sm:gap-8 w-full">
+          <div className="w-full lg:col-span-3">
             <h2 className="font-serif text-3xl md:text-4xl italic">About,<br />in three paragraphs.</h2>
-            <p className="font-hand text-xl text-sepia mt-6">a quick hello</p>
+            <p className="font-hand text-xl text-sepia mt-3 sm:mt-6">a quick hello</p>
           </div>
-          <div className="col-span-12 lg:col-span-8 lg:col-start-5 space-y-6 text-lg leading-relaxed text-ink/85 font-light">
+          <div className="w-full lg:col-span-8 lg:col-start-5 space-y-5 sm:space-y-6 text-base sm:text-lg leading-relaxed text-ink/85 font-light">
             <p>
               I'm <span className="font-serif italic text-ink text-xl">Diksha</span>, a UI/UX designer who came to design through an unusual door: a B.Sc in Computer Applications and an M.Sc in Physics. Equations taught me to respect the question before reaching for the answer. Design taught me that the answer is always a person.
             </p>
             <p>
               For the last year and a bit, I've been at <span className="text-ink font-medium">The MadBrains Technologies</span> in Abohar, owning the full design loop for products across fintech, agritech, real estate, and healthcare. From secondary research and information architecture to pixel-perfect Figma prototypes; I'd rather ship one screen I deeply understand than ten I'm guessing at.
             </p>
-            <p className="font-serif italic text-xl text-ink leading-snug">
+            <p className="font-serif italic text-lg sm:text-xl text-ink leading-snug">
               I believe great design isn't noticed. It's simply felt, like a good chair, or a hand that catches you before you trip.
             </p>
           </div>
@@ -146,10 +146,10 @@ function Index() {
         </section>
 
         {/* EXPERTISE + JOURNEY */}
-        <section id="journey" className="grid grid-cols-12 gap-12 lg:gap-16 mb-32 lg:mb-40">
-          <div className="col-span-12 md:col-span-6">
-            <h2 className="font-serif text-3xl md:text-4xl italic mb-10 border-b hairline pb-4">Expertise</h2>
-            <div className="grid grid-cols-2 gap-y-3 gap-x-6">
+        <section id="journey" className="flex flex-col md:grid md:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 mb-24 sm:mb-32 lg:mb-40 w-full">
+          <div className="w-full md:col-span-6">
+            <h2 className="font-serif text-3xl md:text-4xl italic mb-6 sm:mb-10 border-b hairline pb-4">Expertise</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-6">
               <ul className="space-y-2 text-base text-ink/85">
                 {expertiseLeft.map((e) => <li key={e}>{e}</li>)}
               </ul>
@@ -157,14 +157,14 @@ function Index() {
                 {expertiseRight.map((e) => <li key={e}>{e}</li>)}
               </ul>
             </div>
-            <div className="mt-12">
+            <div className="mt-8 sm:mt-12">
               <p className="font-hand text-xl text-sepia leading-snug">
                 Tools I use to think:
               </p>
-              <div className="mt-3 flex flex-wrap gap-x-3 gap-y-2 text-xs uppercase tracking-[0.2em] text-ink/60">
-                {tools.map((t, i) => (
-                  <span key={t}>
-                    {t}{i < tools.length - 1 && <span className="ml-3 text-ink/20">·</span>}
+              <div className="mt-3 flex flex-wrap gap-2 text-[10px] sm:text-xs uppercase tracking-[0.14em] font-medium text-ink/70">
+                {tools.map((t) => (
+                  <span key={t} className="px-2.5 py-1 rounded bg-card border hairline">
+                    {t}
                   </span>
                 ))}
               </div>
@@ -172,12 +172,12 @@ function Index() {
           </div>
 
           <div className="col-span-12 md:col-span-6">
-            <h2 className="font-serif text-3xl md:text-4xl italic mb-10 border-b hairline pb-4">Journey</h2>
+            <h2 className="font-serif text-3xl md:text-4xl italic mb-6 sm:mb-10 border-b hairline pb-4">Journey</h2>
 
-            <div className="space-y-10">
+            <div className="space-y-8 sm:space-y-10">
               <div className="relative">
                 <p className="text-[10px] uppercase tracking-[0.22em] opacity-40 mb-2">Sept 2024 - Present</p>
-                <h4 className="font-serif text-2xl">The MadBrains Technologies</h4>
+                <h4 className="font-serif text-xl sm:text-2xl">The MadBrains Technologies</h4>
                 <p className="text-sm opacity-60">UI/UX Designer · Abohar, India</p>
                 <p className="mt-4 text-base leading-relaxed font-light text-ink/80 max-w-md">
                   Leading end-to-end design across fintech, agritech, real estate, and healthcare verticals, bridging business goals and user needs from research to handoff.
@@ -191,7 +191,7 @@ function Index() {
 
               <div className="border-t hairline pt-8">
                 <p className="text-[10px] uppercase tracking-[0.22em] opacity-40 mb-2">Jan 2024 - Sept 2024</p>
-                <h4 className="font-serif text-2xl">Freelance</h4>
+                <h4 className="font-serif text-xl sm:text-2xl">Freelance</h4>
                 <p className="text-sm opacity-60">UI/UX Designer · Remote</p>
                 <p className="mt-4 text-base leading-relaxed font-light text-ink/80 max-w-md">
                   Taking on independent design projects across web and mobile, from brand-aligned landing pages to full product flows. A parallel practice that keeps my craft sharp and my perspective wide.
@@ -200,13 +200,13 @@ function Index() {
 
               <div className="border-t hairline pt-8">
                 <p className="text-[10px] uppercase tracking-[0.22em] opacity-40 mb-2">Education</p>
-                <h4 className="font-serif text-2xl">M.Sc Physics</h4>
+                <h4 className="font-serif text-xl sm:text-2xl">M.Sc Physics</h4>
                 <p className="text-sm opacity-60">Analytical rigour, systems thinking, the patience for hard problems.</p>
               </div>
 
               <div className="border-t hairline pt-8">
                 <p className="text-[10px] uppercase tracking-[0.22em] opacity-40 mb-2">Education</p>
-                <h4 className="font-serif text-2xl">B.Sc Computer Applications</h4>
+                <h4 className="font-serif text-xl sm:text-2xl">B.Sc Computer Applications</h4>
                 <p className="text-sm opacity-60">Foundation in software systems: empathy for the engineers I design with.</p>
               </div>
             </div>
@@ -214,7 +214,7 @@ function Index() {
         </section>
 
         {/* SMALL STATS RIBBON */}
-        <section className="mb-32 lg:mb-40 grid grid-cols-2 md:grid-cols-4 gap-6 border-y hairline py-10">
+        <section className="mb-24 sm:mb-32 lg:mb-40 grid grid-cols-2 md:grid-cols-4 gap-6 border-y hairline py-8 sm:py-10">
           <Stat n="7" label="Projects designed" />
           <Stat n="2+ yr" label="Industry experience" />
           <Stat n="7" label="Case studies" />
@@ -223,18 +223,18 @@ function Index() {
 
         {/* CONTACT */}
         <section id="contact" className="text-center">
-          <p className="font-hand text-3xl text-sepia mb-6">Let's start a conversation</p>
+          <p className="font-hand text-2xl sm:text-3xl text-sepia mb-4 sm:mb-6">Let's start a conversation</p>
           <a
             href="mailto:jdishu992@gmail.com"
-            className="block font-serif text-4xl md:text-7xl lg:text-8xl italic text-ink hover:text-sepia transition-colors decoration-1 underline-offset-[14px] underline decoration-ink/20 break-all"
+            className="block font-serif text-2xl xs:text-3xl sm:text-5xl md:text-7xl lg:text-8xl italic text-ink hover:text-sepia transition-colors decoration-1 underline-offset-[8px] sm:underline-offset-[14px] underline decoration-ink/20 break-all sm:break-normal"
           >
             jdishu992@gmail.com
           </a>
-          <p className="mt-10 text-base text-ink/60 max-w-xl mx-auto font-light">
+          <p className="mt-8 sm:mt-10 text-sm sm:text-base text-ink/60 max-w-xl mx-auto font-light">
             I turn ideas into experiences that make people smile. If you're building something kind, ambitious, or unreasonable, drop me a line.
           </p>
 
-          <div className="mt-16 flex flex-wrap justify-center gap-x-10 gap-y-4 text-[11px] uppercase tracking-[0.22em] font-medium text-ink/60">
+          <div className="mt-12 sm:mt-16 flex flex-wrap justify-center gap-x-6 sm:gap-x-10 gap-y-3 sm:gap-y-4 text-[10px] sm:text-[11px] uppercase tracking-[0.18em] sm:tracking-[0.22em] font-medium text-ink/60">
             <a href="https://www.linkedin.com/in/dikshajangra1/" target="_blank" rel="noreferrer" className="hover:text-ink">LinkedIn ↗</a>
             <a href="https://www.behance.net/dikshajangra8" target="_blank" rel="noreferrer" className="hover:text-ink">Behance ↗</a>
             <a href="https://dribbble.com/Diksha_Jangra" target="_blank" rel="noreferrer" className="hover:text-ink">Dribbble ↗</a>

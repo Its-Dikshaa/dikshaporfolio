@@ -63,7 +63,7 @@ function Index() {
                   <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-60 animate-ping" />
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
                 </span>
-                Available · 2025
+                Available · 2026
               </span>
             </div>
           </div>

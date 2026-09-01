@@ -28,7 +28,7 @@ export function SiteFooter() {
   return (
     <footer className="mt-24 border-t hairline">
       <div className="mx-auto max-w-6xl px-6 lg:px-8 py-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-[10px] uppercase tracking-[0.22em] text-ink/40">
-        <div>© 2025 Diksha Jangra | Built with care in Abohar, India</div>
+        <div>© 2026 Diksha Jangra | Built with care in Abohar, India</div>
         <div className="flex gap-8 font-medium">
           <a href="https://www.linkedin.com/in/dikshajangra1/" target="_blank" rel="noreferrer" className="hover:text-ink">LinkedIn</a>
           <a href="https://www.behance.net/dikshajangra8" target="_blank" rel="noreferrer" className="hover:text-ink">Behance</a>

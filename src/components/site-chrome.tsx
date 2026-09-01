@@ -7,7 +7,7 @@ export function SiteNav() {
         <Link to="/" className="font-serif text-xl sm:text-2xl font-bold italic tracking-tight text-ink">
           D. Jangra
         </Link>
-        <div className="flex items-center gap-4 sm:gap-8 lg:gap-10 text-[10px] sm:text-[11px] font-medium uppercase tracking-[0.18em] sm:tracking-[0.22em] text-ink/70">
+        <div className="flex items-center gap-3.5 sm:gap-8 lg:gap-10 text-[9px] xs:text-[10px] sm:text-[11px] font-medium uppercase tracking-[0.12em] sm:tracking-[0.22em] text-ink/70 shrink-0">
           <a href="/#work" className="hover:text-sepia transition-colors">Work</a>
           <a href="/#about" className="hover:text-sepia transition-colors">About</a>
           <a href="/#journey" className="hover:text-sepia transition-colors">Journey</a>

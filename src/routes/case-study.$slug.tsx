@@ -1,3 +1,4 @@
+import React from "react";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { caseStudies, getCaseStudy, type CaseStudy } from "@/lib/case-studies";
 import { SiteNav, SiteFooter } from "@/components/site-chrome";
@@ -196,15 +197,15 @@ function CaseStudyPage() {
         {/* IA */}
         {cs.ia && (
           <Chapter num="05" title="Information architecture" hand="the bones of the thing">
-            <div className="border hairline rounded-lg p-7 bg-card overflow-x-auto max-w-4xl">
-              <p className="font-serif text-xl md:text-2xl leading-loose text-ink whitespace-nowrap md:whitespace-normal">
+            <div className="border hairline rounded-lg p-5 sm:p-7 bg-card overflow-x-auto max-w-4xl">
+              <div className="font-serif text-base sm:text-xl md:text-2xl leading-relaxed text-ink flex flex-wrap items-center gap-y-3 gap-x-2">
                 {cs.ia.split("→").map((node, i, arr) => (
-                  <span key={i}>
-                    <span>{node.trim()}</span>
-                    {i < arr.length - 1 && <span className="text-sepia mx-3 font-hand text-2xl">→</span>}
-                  </span>
+                  <React.Fragment key={i}>
+                    <span className="inline-block bg-secondary/50 px-2.5 py-1 rounded border hairline">{node.trim()}</span>
+                    {i < arr.length - 1 && <span className="text-sepia mx-1 font-hand text-xl sm:text-2xl">→</span>}
+                  </React.Fragment>
                 ))}
-              </p>
+              </div>
             </div>
           </Chapter>
         )}

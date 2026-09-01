@@ -31,22 +31,22 @@ function Index() {
     <div className="paper relative min-h-screen bg-background text-foreground">
       <SiteNav />
 
-      <main className="mx-auto max-w-6xl px-6 lg:px-8 pt-40 lg:pt-48 pb-16">
+      <main className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-28 sm:pt-36 lg:pt-44 pb-16 overflow-x-hidden">
         {/* HERO */}
-        <header className="relative grid grid-cols-12 gap-8 mb-32 lg:mb-48 drift">
+        <header className="relative grid grid-cols-12 gap-6 sm:gap-8 mb-24 sm:mb-32 lg:mb-48 drift">
           <div className="col-span-12 lg:col-span-9">
-            <p className="font-hand text-2xl text-sepia mb-4 relative inline-block">
+            <p className="font-hand text-xl sm:text-2xl text-sepia mb-3 sm:mb-4 relative inline-block">
               Based in Abohar, India
-              <ScribbleArrow className="absolute -right-12 top-1 w-9 h-9 text-sepia/40" />
+              <ScribbleArrow className="hidden sm:block absolute -right-12 top-1 w-9 h-9 text-sepia/40" />
             </p>
-            <h1 className="font-serif text-[18vw] md:text-[12rem] leading-[0.84] italic tracking-tighter mb-10 text-ink">
+            <h1 className="font-serif text-6xl sm:text-8xl md:text-[10rem] lg:text-[12rem] leading-[0.88] sm:leading-[0.84] italic tracking-tighter mb-6 sm:mb-10 text-ink">
               Diksha<br />Jangra<span className="text-sepia">.</span>
             </h1>
-            <p className="max-w-2xl text-xl md:text-2xl leading-relaxed font-light text-ink/80">
+            <p className="max-w-2xl text-lg sm:text-xl md:text-2xl leading-relaxed font-light text-ink/80">
               I design digital experiences where <span className="ink-underline text-ink">empathy meets precision</span>, crafting human-centric products across fintech, agritech, and healthcare for the past 2+ years.
             </p>
 
-            <div className="mt-12 flex flex-wrap items-center gap-6">
+            <div className="mt-8 sm:mt-12 flex flex-wrap items-center gap-4 sm:gap-6">
               <a
                 href="#work"
                 className="group inline-flex items-center gap-3 text-sm font-medium text-ink underline-soft hover:text-sepia transition-colors"
@@ -58,7 +58,7 @@ function Index() {
               <a href="#contact" className="text-sm font-medium text-ink/70 hover:text-ink underline-soft">
                 Let's talk
               </a>
-              <span className="ml-auto inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-ink/50">
+              <span className="sm:ml-auto inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-ink/50">
                 <span className="relative flex h-2 w-2">
                   <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-60 animate-ping" />
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />

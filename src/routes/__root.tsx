@@ -107,7 +107,8 @@ function RootShell({ children }: { children: React.ReactNode }) {
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
+              function gtag(){window.dataLayer.push(arguments);}
+              window.gtag = gtag;
               gtag('js', new Date());
 
               gtag('config', 'G-LCCZXLXPFB');

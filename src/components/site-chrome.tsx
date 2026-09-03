@@ -12,7 +12,7 @@ export function SiteNav() {
           <a href="/#work" className="hover:text-sepia transition-colors">Work</a>
           <a href="/#about" className="hover:text-sepia transition-colors">About</a>
           <a href="/#journey" className="hover:text-sepia transition-colors">Journey</a>
-          <a href="/#contact" onClick={trackContactClick} className="hover:text-sepia transition-colors">Contact</a>
+          <a href="/#contact" onClick={() => trackContactClick()} className="hover:text-sepia transition-colors">Contact</a>
         </div>
       </nav>
     </header>
@@ -25,7 +25,7 @@ export function SiteFooter() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-6 sm:py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] uppercase tracking-[0.2em] text-ink/50 text-center sm:text-left">
         <div>© 2026 Diksha Jangra | Built with care in Abohar, India</div>
         <div className="flex flex-wrap justify-center gap-6 sm:gap-8 font-medium">
-          <a href="https://www.linkedin.com/in/dikshajangra1/" target="_blank" rel="noreferrer" onClick={trackLinkedInClick} className="hover:text-sepia transition-colors">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/dikshajangra1/" target="_blank" rel="noreferrer" onClick={() => trackLinkedInClick()} className="hover:text-sepia transition-colors">LinkedIn</a>
           <a href="https://www.behance.net/dikshajangra8" target="_blank" rel="noreferrer" className="hover:text-sepia transition-colors">Behance</a>
           <a href="https://dribbble.com/Diksha_Jangra" target="_blank" rel="noreferrer" className="hover:text-sepia transition-colors">Dribbble</a>
           <a href="https://medium.com/@DikshaJangra" target="_blank" rel="noreferrer" className="hover:text-sepia transition-colors">Medium</a>

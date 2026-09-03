@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { caseStudies } from "@/lib/case-studies";
 import { SiteNav, SiteFooter, ScribbleArrow } from "@/components/site-chrome";
 import { ProjectThumbnail } from "@/components/screen-mockup";
+import { trackContactClick, trackLinkedInClick, trackProjectClick } from "@/lib/analytics";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -55,7 +56,7 @@ function Index() {
                 <span className="group-hover:translate-x-1 transition-transform">→</span>
               </a>
               <span className="text-ink/30">·</span>
-              <a href="#contact" className="text-sm font-medium text-ink/70 hover:text-ink underline-soft">
+              <a href="#contact" onClick={trackContactClick} className="text-sm font-medium text-ink/70 hover:text-ink underline-soft">
                 Let's talk
               </a>
               <span className="sm:ml-auto inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-ink/50">
@@ -111,6 +112,7 @@ function Index() {
                 key={c.slug}
                 to="/case-study/$slug"
                 params={{ slug: c.slug }}
+                onClick={() => trackProjectClick(c.title)}
                 className="group block border hairline rounded-xl bg-card/80 overflow-hidden hover:border-sepia/50 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
               >
                 <ProjectThumbnail slug={c.slug} title={c.title} thumbnailImage={c.heroImage || c.thumbnailImage} />
@@ -226,6 +228,7 @@ function Index() {
           <p className="font-hand text-2xl sm:text-3xl text-sepia mb-4 sm:mb-6">Let's start a conversation</p>
           <a
             href="mailto:jdishu992@gmail.com"
+            onClick={trackContactClick}
             className="block font-serif text-2xl xs:text-3xl sm:text-5xl md:text-7xl lg:text-8xl italic text-ink hover:text-sepia transition-colors decoration-1 underline-offset-[8px] sm:underline-offset-[14px] underline decoration-ink/20 break-all sm:break-normal"
           >
             jdishu992@gmail.com
@@ -235,7 +238,7 @@ function Index() {
           </p>
 
           <div className="mt-12 sm:mt-16 flex flex-wrap justify-center gap-x-6 sm:gap-x-10 gap-y-3 sm:gap-y-4 text-[10px] sm:text-[11px] uppercase tracking-[0.18em] sm:tracking-[0.22em] font-medium text-ink/60">
-            <a href="https://www.linkedin.com/in/dikshajangra1/" target="_blank" rel="noreferrer" className="hover:text-ink">LinkedIn ↗</a>
+            <a href="https://www.linkedin.com/in/dikshajangra1/" target="_blank" rel="noreferrer" onClick={trackLinkedInClick} className="hover:text-ink">LinkedIn ↗</a>
             <a href="https://www.behance.net/dikshajangra8" target="_blank" rel="noreferrer" className="hover:text-ink">Behance ↗</a>
             <a href="https://dribbble.com/Diksha_Jangra" target="_blank" rel="noreferrer" className="hover:text-ink">Dribbble ↗</a>
             <a href="https://medium.com/@DikshaJangra" target="_blank" rel="noreferrer" className="hover:text-ink">Medium ↗</a>

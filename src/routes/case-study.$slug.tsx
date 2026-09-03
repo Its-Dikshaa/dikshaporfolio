@@ -3,6 +3,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { caseStudies, getCaseStudy, type CaseStudy } from "@/lib/case-studies";
 import { SiteNav, SiteFooter } from "@/components/site-chrome";
 import { PhoneFrame, ClosingGridShowcase, ImageWithFallback } from "@/components/screen-mockup";
+import { trackProjectClick } from "@/lib/analytics";
 
 export const Route = createFileRoute("/case-study/$slug")({
   component: CaseStudyPage,
@@ -352,6 +353,7 @@ function CaseStudyPage() {
           <Link
             to="/case-study/$slug"
             params={{ slug: next.slug }}
+            onClick={() => trackProjectClick(next.title)}
             className="group flex items-end justify-between gap-6 py-6 border-b hairline"
           >
             <div>
